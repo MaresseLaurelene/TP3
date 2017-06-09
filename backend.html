@@ -73,10 +73,28 @@
 	
 	<div class="element">
 		<h2>
-			Article 4 !! <!--Elise-->
+			La classe BackendApplication <!--Elise-->
 		</h2>
 		<p>
-			Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+Cette classe ne sera pas strictement identique à la classe FrontendApplication. En effet, nous devons sécuriser l'application afin que seuls les utilisateurs authentifiés y aient accès.
+
+Pour rappel, voici le fonctionnement de la méthode run() de la classe FrontendApplication :
+
+Obtention du contrôleur grâce à la méthode parente getController().
+Exécution du contrôleur.
+Assignation de la page créée par le contrôleur à la réponse.
+Envoi de la réponse.
+
+La classe BackendApplication fonctionnera de la même façon, à la différence près que la première instruction ne sera exécutée que si l'utilisateur est authentifié. Sinon, nous allons récupérer le contrôleur du module de connexion que nous allons créer dans ce chapitre. Voici donc le fonctionnement de la méthode run() de la classe BackendApplication :
+
+    Si l'utilisateur est authentifié :
+obtention du contrôleur grâce à la méthode parente getController().
+
+    Sinon :
+instanciation du contrôleur du module de connexion. 
+Exécution du contrôleur.
+
 		</p>
 		<h3>Source : <a href="#">blabla</a>
 		</h3>
